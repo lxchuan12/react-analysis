@@ -6,9 +6,30 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="app"></div>
     <script src="./js/react.development.js"></script>
     <script src="./js/react-dom.development.js"></script>
-    <script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type="text/babel">
+        // import React, { useState } from 'react';
+
+        // import React, { useState } from 'react';
+        function Example() {
+            // Declare a new state variable, which we'll call "count"
+            const [count, setCount] = React.useState(0);
+            // console.log(setCount(count + 1));
+            console.log(count);
+            return (
+                <div>
+                    <p>You clicked {count} times</p>
+                    <button onClick={() => setCount(count + 1)}>
+                        Click me
+                    </button>
+                </div>
+            );
+        }
+        // Example();
+        ReactDOM.render(<Example/>, document.getElementById('app'));
         console.log(React, 'React');
         console.log(ReactDOM, 'ReactDOM');
     </script>
